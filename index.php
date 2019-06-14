@@ -26,7 +26,7 @@ $blog_info = mysqli_fetch_assoc($query_result);
     <title>Innovation Geeks Blog</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -46,42 +46,47 @@ $blog_info = mysqli_fetch_assoc($query_result);
   </head>
 
   <body>
-       <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" href="index.php">Innovation Geeks</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Innovation Geek Blog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Problem Solving <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Motivation</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Programming languages
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">PHP</a>
+                      <a class="dropdown-item" href="#">python</a>
+
+                      <a class="dropdown-item" href="#">Javascript</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " href="#">About me</a>
+              </li>
+          </ul>
+
       </div>
-    </nav>
+  </nav>
+  <div class="jumbotron">
+      <div class="container">
+
+      </div>
+  </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <!--<h1><?php echo $blog_info['blog_title']; ?></h1>
-        <hr>
-        <p><?php echo $blog_info['author_name']; ?></p>
-        
-        <p><?php echo $blog_info['blog_description']; ?></p> -->
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
+
 
     <div class="container">
       <!-- Example row of columns -->
@@ -89,10 +94,10 @@ $blog_info = mysqli_fetch_assoc($query_result);
       <div class="row">
            <?php while ($blog_info = mysqli_fetch_assoc($query_result)) { 
                                 ?>
-        <div class="col-md-4">
+        <div class="col-md-12 text-center">
            
             <h2><?php echo $blog_info['blog_title']; ?><small>-<?php echo $blog_info['author_name']; ?></small></h2>
-            <img src="admin/<?php echo $blog_info['blog_image']; ?>" alt="" style="height: 200px;width:250; margin-left: "/>
+            <img  src="admin/<?php echo $blog_info['blog_image']; ?>" alt="" style="height: 500px;width:450;"  />
             <p><?php echo mb_substr($blog_info['blog_description'],0,300)?></p>
           <p><a class="btn btn-default" href="blog_details.php?id=<?php echo $blog_info['blog_id']; ?>&&title<?php echo $blog_info['blog_title']; ?>" role="button">View details &raquo;</a></p>
          
@@ -103,12 +108,14 @@ $blog_info = mysqli_fetch_assoc($query_result);
       
 
       <footer>
+
         <p>&copy; 2016 Company, Inc.</p>
       </footer>
-    </div> 
+    </div>
 
-   
-    <script src="../asset/js/bootstrap.min.js"></script>
-    
-     </body>
+
+  <script src="asset/dist/js/jquery-3.3.1.min.js"></script>
+  <script src="asset/dist/js/bootstrap.min.js"></script>
+
+  </body>
 </html>

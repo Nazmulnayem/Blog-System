@@ -32,7 +32,7 @@ $message = $login->admin_login_check($_POST);
     <link rel="icon" href="../../favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/jumbotron/">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>AdminHome</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../asset/css/bootstrap.min.css" rel="stylesheet">
